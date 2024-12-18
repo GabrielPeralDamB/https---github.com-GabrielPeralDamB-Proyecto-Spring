@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carrito de Compras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <!--<script src=../assets/js/pagar.js></script>-->
+</head>
+
+<body>
+
+    <header>
+        <img src="/assets/img/logo3.png" alt="logo">
+        <h1>Productos en carrito</h1>
+    </header>
+    <a href="#" class="btn-volver">Volver</a>
+    <main>
+        <div class="cart-container">
+            <div class="cart-items">
+                <h2>Productos</h2>
+                <ul id="cart-items-list">
+                    
+                </ul>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Resumen</h2>
+                <p>Total de productos: <span id="total-items"></span></p>
+                <p id="precioTotal">Precio total: <span id="total-price"></span>€</p>
+                
+                <br>
+                <img src="/assets/img/metodospago.png" alt="Efectivo, Tarjeta, Bizum">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Selecciona el botón y el contador de productos
+            const checkoutButton = document.getElementById("checkout-button");
+            const precioTotal = document.getElementById("precioTotal");
+            const costoEnvio = document.getElementById("costoEnvio");
+            const totalItems = parseInt(document.getElementById("total-items").innerText);
+
+            // Si no hay productos, deshabilita el botón
+            if (totalItems > 0) {
+                checkoutButton.disabled = false; // Habilitar
+                
+            } else {
+                checkoutButton.disabled = true; // Deshabilitar
+                precioTotal.innerText="Precio total: 0.00€";
+                costoEnvio.innerText="Costo envio: 0.00€";
+            }
+        });
+    </script>
+
+</body>
+
+
+
+</html>

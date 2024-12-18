@@ -1,0 +1,187 @@
+/* Variables de color para facilitar la personalización */
+:root {
+    --primary-color: hsl(2, 86%, 50%); /* Color primario */
+    --secondary-color: hsl(0, 67%, 20%); /* Color secundario */
+    --background-color: hsl(0, 0%, 15%); /* Color de fondo general */
+    --input-bg-color: hsl(0, 0%, 20%); /* Color de fondo de inputs */
+    --accent-color: var(--primary-color); /* Color para elementos destacados */
+    --text-color: hsl(0, 0%, 100%); /* Color del texto principal */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Sombra para los elementos */
+    --accent-color-2: hsl(51, 100%, 50%); /* Color para el precio */
+}
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    align-items: center;
+    padding: 40px;
+}
+/* Estilo global del cuerpo */
+body, html {
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0; /* Eliminar márgenes del body */
+    font-family: 'Arial', sans-serif; /* Fuente básica para el cuerpo */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.valoraciones-container{
+    background-color: var(--secondary-color);
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    margin-left: 20px;
+}
+
+.valoraciones {
+    max-height: 300px; /* Limita la altura del contenedor de valoraciones */
+    overflow-y: auto;  /* Habilita la barra de desplazamiento vertical */
+}
+
+.valoracion {
+    background-color: var(--primary-color);
+    padding: 10px;
+    margin-bottom: 10px; /* Espacio entre cada valoración */
+    border-radius: 5px;
+    color: var(--text-color);
+    max-width: 30vw;
+    min-width: 20vw; /* Máxima anchura para la valoración */
+    word-wrap: break-word; /* Forzar el ajuste de texto si es necesario */
+    white-space: normal; /* Asegura que el texto se ajuste a la siguiente línea */
+}
+
+/* Estilo para el botón de volver */
+.btn-volver {
+    position: fixed;
+    top: 20px; /* Ajusta la posición vertical */
+    left: 20px; /* Ajusta la posición horizontal */
+    background-color: var(--primary-color); /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    text-decoration: none; /* Sin subrayado */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-volver:hover {
+    background-color: var(--secondary-color); /* Color de fondo al pasar el ratón */
+}
+
+/* Opcional: Para hacer que la barra de desplazamiento sea más atractiva */
+.valoraciones::-webkit-scrollbar {
+    width: 8px;
+}
+
+.valoraciones::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Color de la barra de desplazamiento */
+    border-radius: 5px;
+}
+
+.valoraciones::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(2, 86%, 40%); /* Cambia el color al pasar el cursor */
+}
+
+.agregar-valoracion{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.agregar-valoracion form{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo{
+    width: 100px;
+
+    margin-top: 50px;
+}
+
+/* Estilos del contenedor de detalles del producto */
+.producto-detalle {
+    border: 2px solid var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 50px auto; /* Centrar el contenedor y agregar margen superior */
+    max-width: 1000px; /* Limitar el ancho del contenedor */
+    background-color: var(--secondary-color); /* Color de fondo del contenedor */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px var(--shadow-color); /* Sombra del contenedor */
+}
+
+
+
+/* Estilo de la imagen del producto */
+.producto-imagen {
+    width: 300px; /* Ancho fijo para la imagen */
+    height: 300px; /* Mantener la proporción de la imagen */
+    border-radius: 10px;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos de la información del producto */
+.producto-info {
+    display: flex;
+    flex-direction: column; /* Disposición vertical de los elementos */
+}
+
+.producto-nombre {
+    font-size: 50px; /* Tamaño del título del producto */
+    color: var(--text-color);
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.producto-marca,
+.producto-categoria,
+.producto-valoracion,
+.producto-tamano,
+.producto-descripcion {
+    font-size: 1.2em; /* Tamaño de texto para los detalles del producto */
+    margin: 5px 0; /* Espacio entre los elementos de texto */
+    color: #ddd; /* Color más claro para el texto secundario */
+    max-width: 600px; /* Máximo ancho antes de que el texto salte de línea */
+    white-space: normal; /* Permitir que el texto salte de línea */
+    word-wrap: break-word; /* Permitir que las palabras largas se dividan */
+}
+
+
+.producto-precio {
+    font-size: 1.5em; /* Tamaño del precio */
+    color: var(--accent-color-2);
+    margin: 10px 0; /* Espacio alrededor del precio */
+}
+
+.buy-button {
+    background-color: var(--accent-color);
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 1em; /* Tamaño del texto del botón */
+    transition: background-color 0.3s ease; /* Suavizar la transición de color */
+    border-radius: 5px; 
+    margin-top: 15px; 
+}
+
+.buy-button:hover {
+    background-color: hsl(2, 86%, 40%); 
+}
+
+
+footer {
+    text-align: center; 
+    margin-top: 50px; 
+    color: #888; 
+}
