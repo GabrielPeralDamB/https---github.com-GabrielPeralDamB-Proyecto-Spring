@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
                 <img id="logo" src="/assets/img/logo3.png" alt="Logo de Pamborghini Market">
 
 
-                <form action="/" method="POST">
+                <form th:action="@{/login}" method="POST">
                     <div class="input-group">
                         <label for="username">Usuario</label>
                         <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>

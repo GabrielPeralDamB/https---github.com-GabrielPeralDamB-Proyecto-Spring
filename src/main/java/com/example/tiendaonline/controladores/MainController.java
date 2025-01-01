@@ -9,6 +9,7 @@ public class MainController {
 
     @GetMapping("/")
     public String home() {
-        return "redirect:/usuarios";
+        /*return "redirect:/usuarios";*/
+        return "index";
     }
 }
