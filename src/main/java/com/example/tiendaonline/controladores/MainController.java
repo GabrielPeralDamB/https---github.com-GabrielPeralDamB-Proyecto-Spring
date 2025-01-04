@@ -7,9 +7,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-    @GetMapping("/")
-    public String home() {
-        /*return "redirect:/usuarios";*/
-        return "index";
+    @Controller
+    @RequestMapping("/admin")
+    public class AdminController {
+        @GetMapping
+        public String adminPage() {
+            return "listausuario";
+        }
     }
+
+    @Controller
+    @RequestMapping("/empleado")
+    public class EmpleadoController {
+        @GetMapping
+        public String empleadoPage() {
+            return "empleado";
+        }
+    }
+
+    @Controller
+    @RequestMapping("/index")
+    public class UsuarioController {
+        @GetMapping
+        public String usuarioPage() {
+            return "index";
+        }
+    }
+
 }
