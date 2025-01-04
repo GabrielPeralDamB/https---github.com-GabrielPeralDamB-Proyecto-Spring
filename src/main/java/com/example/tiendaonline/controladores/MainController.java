@@ -12,7 +12,7 @@ public class MainController {
     public class AdminController {
         @GetMapping
         public String adminPage() {
-            return "listausuario";
+            return "admin";
         }
     }
 
