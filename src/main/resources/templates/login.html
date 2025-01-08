@@ -42,10 +42,17 @@
                     </div>
                     <button type="submit" class="login-button">Iniciar Sesión</button>
                 </form>
+                <div th:if="${param.registroExitoso}">
+                    <p class="success-message">Registro completado con éxito. Ahora puedes iniciar sesión.</p>
+                </div>
+                <div th:if="${param.recuperacionEnviada}">
+                    <p class="success-message">Se ha enviado un correo para recuperar tu contraseña.</p>
+                </div>
+                
 
                 <div class="login-footer">
-                    <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
-                    <p>¿Olvidaste tu contraseña? <a href="#">Recuperala</a></p>
+                    <p>¿No tienes cuenta? <a href="/registro">Regístrate</a></p>
+                    <p>¿Olvidaste tu contraseña? <a href="/recuperar_password">Recuperala</a></p>
                 </div>
             </div>
         </div>

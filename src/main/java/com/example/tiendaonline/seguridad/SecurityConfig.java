@@ -27,6 +27,8 @@ public class SecurityConfig {
                 .requestMatchers(AntPathRequestMatcher.antMatcher("/css/**")).permitAll()
                 .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/**")).permitAll()
                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
+				.requestMatchers(AntPathRequestMatcher.antMatcher("/registro")).permitAll()
+				.requestMatchers(AntPathRequestMatcher.antMatcher("/recuperar_password")).permitAll()
                 .anyRequest().authenticated()
         )
         .formLogin(login -> login

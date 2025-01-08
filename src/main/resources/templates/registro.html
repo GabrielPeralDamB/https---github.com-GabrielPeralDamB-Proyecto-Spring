@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
             <div class="signup-container">
                 <img id="logo" src="/assets/img/logo3.png" alt="Logo de Pamborghini Market">
                 
-                <form action="" method="POST">
+                <form th:action="@{/registro}" method="POST">
 
                 <div class="group-div-inputs">
                     <div class="input-group">
@@ -73,11 +73,45 @@
                     <button type="submit" class="signup-button">Registrarse</button>
                 </form>
 
+                <div th:if="${error}" class="error-message">
+                    <p th:text="${error}"></p>
+                </div>
+
                 <div class="signup-footer">
-                    <p>¿Ya tienes cuenta? <a href="#">Inicia Sesión</a></p>
+                    <p>¿Ya tienes cuenta? <a href="/login">Inicia Sesión</a></p>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById("registroForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+    
+            const data = {
+                nombre: document.getElementById("nombre").value,
+                apellidos: document.getElementById("apellidos").value,
+                email: document.getElementById("email").value,
+                dni: document.getElementById("dni").value,
+                direccion: document.getElementById("direccion").value,
+                telefono: document.getElementById("telefono").value,
+                fechaNacimiento: document.getElementById("fecha_nacimiento").value,
+                password: document.getElementById("password").value
+            };
+    
+            const response = await fetch("/auth/registro", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+    
+            if (response.ok) {
+                alert("Usuario registrado con éxito");
+                window.location.href = "/login";
+            } else {
+                alert("Error al registrar usuario");
+            }
+        });
+    </script>
 </body>
 </html>

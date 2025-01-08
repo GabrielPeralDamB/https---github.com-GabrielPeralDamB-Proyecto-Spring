@@ -34,4 +34,31 @@ public class MainController {
         }
     }
 
+    @Controller
+    @RequestMapping("/registro")
+    public class RegistroController {
+        @GetMapping
+        public String usuarioPage() {
+            return "registro";
+        }
+    }
+
+    @Controller
+    @RequestMapping("/login")
+    public class LoginController {
+        @GetMapping
+        public String usuarioPage() {
+            return "login";
+        }
+    }
+
+    @Controller
+    @RequestMapping("/recuperar_password")
+    public class PasswordRecoveryController {
+        @GetMapping
+        public String usuarioPage() {
+            return "recuperar_password";
+        }
+    }
+
 }
